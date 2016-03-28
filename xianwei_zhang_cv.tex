@@ -1,0 +1,328 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%% Xianwei Zhang's cv
+%%  -  credit: Yisong Yue, http://www.yisongyue.com/resume/
+%%   - based off work by Michael DeCorte 
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%
+%% The following code sets up the document formatting
+%%
+
+%this assumes that xwz_cv.sty is in some path
+%%XW: in .sty file, I added two parts, 'contact' and 'people'
+%%XW: differing from 'documentclass' (\usepackage{xx}), packages used by '\documentstyle' are provided in the brackets
+%%XW: xcolor, package to define colors
+%%XW: marvosym, package for symbols (letter, cell, mouse and writinghand, etc)
+%%XW:  marvosym: http://texdoc.net/texmf-dist/doc/fonts/marvosym/marvodoc.pdf
+%%XW: more fancy symbols can be found in fontawesome: http://mirror.jmu.edu/pub/CTAN/fonts/fontawesome/doc/fontawesome.pdf
+%%XW: for 'fontawesome', package 'fontspec' and typeset 'LuaLatex' should be used
+\documentstyle[hyperref, margin, line, xcolor, marvosym]{xwz_cv}
+
+\hypersetup{backref,pdfpagemode=Full,colorlinks=true,backref}
+
+%%% XW: http://timmurphy.org/2009/07/22/adjusting-latex-margins/
+\addtolength{\oddsidemargin}{-0.45in}
+\addtolength{\hoffset}{0.30in}		%the horizontal offset of the text (how fast the text is from the left of the page)
+\addtolength{\voffset}{-0.60in}		%the vertical offset of the text (how fast the text is from the top of the page)
+\addtolength{\textwidth}{0.80in} 	%the width of the text on the page
+\addtolength{\textheight}{0.80in}	%the height of the text on the page
+
+\renewcommand{\namefont}{\LARGE\emph}
+
+%%
+%% The following code defines some macros for terms which have raised font
+%% (ie 4\fourth would result 4th with the 'th' raised (superscripted)
+%%
+
+\def\Cplusplus{{\rm C\raise.5ex\hbox{\small ++}}}
+\def\CSharp{{\rm C\raise.5ex\hbox{\small \#}}}
+% 'st' 'nd' 'rd' 'th' superscripts for numbers
+\def\first{{\raise.5ex\hbox{\small st}}}
+\def\second{{\raise.5ex\hbox{\small nd}}}
+\def\third{{\raise.5ex\hbox{\small rd}}}
+\def\fourth{{\raise.5ex\hbox{\small th}}}
+
+%% my commands
+\newcommand{\mysidestyle}{\sc}						%%XW: side format, small capitals
+\newcommand{\me}[1]{{\tt #1}}							%%XW: hightlight me as author
+\newcommand{\pub}[1]{\em\textbf{#1}}					%%XW: pub title format
+\newcommand{\tlk}[1]{\em{#1}}							%%XW: talk title format
+%%XW: original colors, white, black, red, green, blue, cyan, magenta, yellow
+%%XW: see https://en.wikibooks.org/wiki/LaTeX/Colors
+\definecolor{oxfordblue}{rgb}{0.0, 0.13, 0.28}				%%XW: define color, http://latexcolor.com/
+\newcommand{\web}[2]{\href{#1}{\color{oxfordblue} { {#2}}}{}}	%%hyper link format	, arg1: url, arg2: word to display
+   
+%%
+%% starting the actual document
+%%
+
+\begin{document}
+
+\topmargin 0.1in									%%XW: adjust the margin to top
+
+%the name in big fonts at the top of resume
+%this is left aligned
+\name{Xianwei ZHANG}
+%%XW: 'contact' is contact info, at the same line with name, i.e., above the horizontal line
+%%XW: not auto right aligned, please use '\hskip' instead
+\contact{\hskip 3.1cm  \Letter \web{xianeizhang@cs.pitt.edu}{xianeizhang@cs.pitt.edu} \hskip 2.6cm {\Large \ComputerMouse}\web{http://iarchsys.com}{http://iarchsys.com}}
+
+%this is right aligned
+\address{
+\Mobilefone \ +1 412-425-4362 \ \  {\large \WritingHand} 6514 Sennott Square, Pittsburgh PA-15206
+}
+
+\begin{resume}
+
+\vspace{-6mm}
+\section{\mysidestyle Research\\ Interests}
+\textbf{Memory System}, Computer Architecture and Systems\\
+My research interests lie broadly in computer architecture and system with particular emphasis
+on memory system design and optimization on the critical aspects of latency, energy and
+bandwidth. Besides memory design, I also explore memory topics in extended scenarios such
+as approximate computing and security.\\
+In addition, I also have broad interests on other system areas/topics, e.g. operating system,
+GPGPU and compilation, which are partially covered in my\web{http:iarchsys.com}{tech blog} and\web{https://people.cs.pitt.edu/~xianeizhang/\#NOTE}{notes}.
+
+%%%%
+%%%%XW: generally, for each section, format should be first defined
+%%%%XW: '\body', i.e., '\desc' cannot be left out
+%%%%
+
+%%
+%% EDUCATION
+%%
+%\vspace{+3mm}
+\section{\mysidestyle{Education}}
+
+\newcommand{\university}{\organization}			%univesity
+\newcommand{\degree}{\title}					%degree
+%\newcommand{\thesis}{\employer}				%thesis
+\begin{formatb}
+  \degree{l}\dates{r}\\							%degree year
+  \university{l}\\								%university
+ % \body									%desc
+\end{formatb}
+
+\degree{\textbf{Ph.D. candidate in Computer Science}} \dates{Aug 2011 - Apr 2017 (expected)}
+\university{University of Pittsburgh, Pittsburgh, USA}
+\begin{desc}
+  \begin{itemize}
+  	\item {\tt Dissertation Topic}: \textit{"Exploration of DRAM Scaling from Restoring Perspective"}
+	\item {\tt Advisor}:  Prof.\web{http://people.cs.pitt.edu/~zhangyt/}{\em{Youtao Zhang}}
+	\item {\tt Co-advisors} (working with): Prof.\web{http://www.pitt.edu/~juy9/}{\em{Jun Yang}} (ECE) and Prof.\web{http://people.cs.pitt.edu/~childers}{\em{Bruce Childers}} (CS)
+  \end{itemize}
+\end{desc}
+
+\degree{\textbf{B.E. in Software Engineering}} \dates{Sep 2007 - Jun 2011}
+\university{Northwestern Polytechnical University, Xi'an, China}
+\begin{desc}								%%XW: leave 'desc' blank
+\end{desc}
+
+%%
+%% WORK EXPERIENCE
+%%
+\section{\mysidestyle{Experiences}}
+
+\begin{formatb}
+  \organization{l}\title{r}\\
+  \location{l}\dates{r}\\
+  \body\\
+\end{formatb}
+
+\organization{\textbf{University of Pittsburgh}}	\title{Graduate Student Researcher}
+\location{Pittsburgh, USA}					\dates{May 2013 -- Present}
+\begin{desc}
+  \vspace{-0.1in}
+  \begin{itemize}
+  	\item Dec 15- Now\ , Apply approximate computing to achieve energy-accuracy tradeoff.
+	\item Jan 14-Sep 15, Mitigate performance and yield issues in further scaling DRAM.
+	\item Oct 14-Mar 15, Improve bandwidth and performance in Hybrid Memory Cube (HMC).
+	\item Feb 13-May 15, Construct energy efficient non-volatile memories (PCM and DWM).
+  \end{itemize}
+\end{desc}
+
+\organization{\textbf{University of Pittsburgh}}	\title{Teaching Assistant}
+\location{Pittsburgh, USA}					\dates{Aug 2011 -- Apr 2013}
+\begin{desc}
+CS0401 (Fall'11, Spring'12), CS1502 (Fall'12), CS2520 (Spring'13), CS2210 (Spring'15)
+\end{desc}
+
+\organization{\textbf{Alipay Technology Inc.}, Alibaba}	\title{Java Developer Intern}
+\location{Hangzhou, China}				\dates{Aug 2010 -- Dec 2010}
+\begin{desc}
+Implemented source management system based on SOFA/Spring framework.
+\end{desc}
+
+
+%%
+%% PUBLICATIONS
+%%
+\section{\mysidestyle{Publications}}
+
+\newcommand{\authors}{\people}					%authors
+\newcommand{\conf}{\organization}					%conf
+\begin{formatb}
+  \authors{l} \conf{r}\\
+  \body\\
+\end{formatb}
+
+\authors{\me{Xianwei Zhang}, Youtao Zhang, Bruce R. Childers and Jun Yang} 		\conf{HPCA'2016}
+\begin{desc}
+  {\pub{Restore Truncation for Performance Improvement in Future DRAM Systems}.} \\
+  The 22nd IEEE Symposium on High Performance Computer Architecture(HPCA), Barcelona, Spain, 2016.
+\end{desc}
+
+\authors{\me{Xianwei Zhang}, Youtao Zhang, Bruce R. Childers and Jun Yang} 		\conf{TODAES}
+\begin{desc}
+  {\pub{On the Restore Time Variations of Future DRAM Memory}}, ({\em under review}).\\
+  ACM Transactions on Design Automation of Electronic Systems (TODAES).
+\end{desc}
+
+\authors{\me{Xianwei Zhang}, Youtao Zhang, Bruce R. Childers and Jun Yang} 		\conf{DATE'2015}
+\begin{desc}
+  {\pub{Exploiting DRAM Restore Time Variations in Deep Sub-micron Scaling}.}\\
+  The IEEE conference on Design, Automation and Test in Europe (DATE), Grenoble, France, 2015.
+\end{desc}
+
+\authors{\me{Xianwei Zhang}, Youtao Zhang and Jun Yang} 					\conf{ICCD'2015}
+\begin{desc}
+  {\pub{DLB: Dynamic Lane Borrowing for Improving Bandwidth and Performance in Hybrid Memory Cube}.}\\
+  The 33rd IEEE International Conference on Computer Design(ICCD), NYC, NY, 2015.
+\end{desc}
+
+\authors{\me{Xianwei Zhang}, Youtao Zhang and Jun Yang} 					\conf{ICCD'2015}
+\begin{desc}
+  {\pub{TriState-SET: Proactive SET for Improved Performance in MLC Phase Change Memories}.}\\
+  The 33rd IEEE International Conference on Computer Design(ICCD), NYC, NY, 2015.
+\end{desc}
+
+\authors{\me{Xianwei Zhang}, Youtao Zhang and Jun Yang} 					\conf{ICCD'2015}
+\begin{desc}
+  {\pub{Exploit Common Source-Line to Construct Energy Efficient Domain Wall Memory based Caches}.}\\
+  The 33rd IEEE International Conference on Computer Design(ICCD), NYC, NY, 2015.
+\end{desc}
+
+\authors{\me{Xianwei Zhang}, Youtao Zhang and Jun Yang} 					\conf{DAC'2015}
+\begin{desc}
+  {\pub{Adaptive Lane Borrowing of Hybrid Memory Cube}}, ({\em Work-in-progress}).\\
+  The 52nd ACM/IEEE Design Automation Conference (DAC), San Francisco, CA, June 2015.
+\end{desc}
+
+\authors{\me{Xianwei Zhang}, Youtao Zhang, Chuanjun Zhang and Jun Yang} 		\conf{ISLPED'2013}
+\begin{desc}
+  {\pub{WoM-SET: Lowering Write Power of Proactive-SET based PCM Write Strategy Using WoM Code}.}\\
+  The International Symposium on Low Power Electronics and Design (ISLPED), Beijing, China, 2013. \\
+  \textbf{$\star\star\star$ Best Paper Award $\star\star\star$}
+\end{desc}
+
+%%
+%% Presentations
+%%
+\section{\mysidestyle{Presentations}}
+	
+\newcommand{\talktype}{\organization}				%type of presentation
+\newcommand{\dateloc}{\location}					%dateloc
+\begin{formatb}
+  \talktype{l} \dateloc{r}\\
+  \body\\
+\end{formatb}
+
+\talktype{{\em HPCA} Symposium}					\dateloc{{\em Mar 2016}, Barcelona, Spain}
+\begin{desc}
+	\tlk{Restore Truncation for Performance Improvement in Future DRAM Systems}
+\end{desc}
+
+\talktype{Thesis Proposal}							\dateloc{{\em Jan 2016}, Pittsburgh, USA}
+\begin{desc}
+	\tlk{Exploration of DRAM Scaling from Restoring Perspective}
+\end{desc}
+
+\talktype{{\em ICCD} Symposium}					\dateloc{{\em Oct 2015}, New York City, USA}
+\begin{desc}
+	\tlk{DLB: Dynamic Lane Borrowing for Improving Bandwidth and Performance in Hybrid Memory Cube\\ 
+	TriState-SET: Proactive SET for Improved Performance of MLC Phase Change Memories}
+\end{desc}
+
+\talktype{{\em MemSys} Symposium}				\dateloc{{\em Oct 2015}, Washington DC, USA}
+\begin{desc}
+	\tlk{Achieving Yield, Density and Performance Effective DRAM at Extreme Technology Sizes}
+\end{desc}
+
+\talktype{CompExam}							\dateloc{{\em Jul 2015}, Pittsburgh, USA}
+\begin{desc}
+	\tlk{Shared Resources Management and Execution Replay in Chip Multiprocessor}
+\end{desc}
+
+%%
+%% HONORS
+%%
+\section{\mysidestyle{Honors \&\\ Awards}}
+
+\newcommand{\prize}{\title}						%prize
+\newcommand{\issuedby}{\organization}				%issuedby
+\begin{formatb}
+  \prize{l}	\issuedby{r}\\
+  %\body\\
+\end{formatb}
+
+\prize{\textbf{Andrew Mellon Predoctoral Fellowship}}					\issuedby{{\em University of Pittsburgh}'2016}
+\begin{desc}
+\end{desc}
+
+\prize{Student Travel Awards}										\issuedby{{\em HPCA}'2016, {\em SPAA}'2015}
+\begin{desc}
+\end{desc}
+
+\prize{\textbf{Best Paper Award}}									\issuedby{{\em ISLPED}'2013}
+\begin{desc}
+\end{desc}
+
+\prize{Recipient of 2011 graduation design (Thesis) key support fund}		\issuedby{{\em NPU}'2011}
+\begin{desc}
+\end{desc}
+
+\prize{National Scholarship}										\issuedby{{\em Ministry of Education of China}'2010}
+\begin{desc}
+\end{desc}
+
+\prize{\textbf{Tencent Technology Excellence Scholarship}}				\issuedby{{\em Tencent Inc.}'2009}
+\begin{desc}
+\end{desc}
+
+%%
+%% SKILLS, Nothing special here, just a normal table
+%%
+
+\section{\mysidestyle Skills}
+ \noindent\begin{tabular}{@{}lll}
+ \textbf{Programming:}   	& \ \ & C/C++, JAVA, Shell, Python, Android \\ 
+ \textbf{Simulation:}   	& \ \ & GEM5, MARSSx86, DRAMSim2, USIMM, CACTI, SPICE \\ 
+ \textbf{Tools:}   		& \ \ & Pin, Vim, Makefile, Git, GDB, \LaTeX, gcc/g++ \\
+  \end{tabular}
+
+%%
+%% MISC
+%%
+\section{\mysidestyle{Misc}}
+
+ \noindent\begin{tabular}{@{}lll}		%%XW: cancel the table indent
+ \textbf{Homepage:\ \ \ }   	& \ \ & \web{https://people.cs.pitt.edu/~xianeizhang/}{https://people.cs.pitt.edu/$\sim$xianeizhang/} \\ 
+ %\textbf{Linkedin:}   		& \ \ & \web{www.linkedin.com/in/xianweizhang}{www.linkedin.com/in/xianweizhang} \\ 
+ \textbf{Github:}   		& \ \ & \web{https://github.com/cinwell}{https://github.com/cinwell} \\
+ \textbf{Blog:}   			& \ \ & \web{http://iarchsys.com}{http://iarchsys.com} \\
+  \end{tabular}
+
+%%
+%% REFERENCES
+%%
+\section{\mysidestyle{References}}
+Available upon request.
+
+\end{resume}
+\end{document}
+

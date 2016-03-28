@@ -1,0 +1,5 @@
+#do NOT track the following files
+*.log
+*.aux
+*.synctex.gz
+*copy.tex
